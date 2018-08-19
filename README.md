@@ -1,1 +1,1 @@
-# News-Junky
+# NewsJunky - A personalized news app
