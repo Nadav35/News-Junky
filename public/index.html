@@ -2,62 +2,110 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="./style.css" >
+    <link rel="stylesheet" type="text/css" href="./css/style.css" >
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <script type="text/javascript" src="./bundle.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js">
+    </script>
+    <link href="https://fonts.googleapis.com/css?family=Cabin|Old+Standard+TT|Lora|Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <link href="/css/jquery-ui.min.css" rel="stylesheet" >
+    <script type="text/javascript" src="/javascripts/jquery-ui.min.js">
     </script>
     <title></title>
   </head>
   <body>
     <div class="wrapper">
-      <header>
+      <!-- <header>
         <h1>Welcome to NewsJunky</h1>
         <h2>All the news you can handle, personalized just for you!!</h2>
       </header>
-    </div>
-    <div class="main-container">
-      <div class="left-side">
-        <div class="top-dashboard">
-          <h1>Just the Top Headlines, plz</h1>
-          <span>Select at least from one of the options to get the relevent news. You can't mix news source with category or country
-          </span>
-          <div class="keyword-everything">
-            <h2>Get news by keyword</h2>
-            .<div class="keyword-div">
-              <i class="fas fa-key"></i>
-              <input class="keyword-input"
-              placeholder="Enter something"
-              type=text
-              />
-            </div>
 
-          </div>
-          <div class="category-everything">
-            <h2>Search by category</h2>
-            <div class="category-div">
-              <i class="far fa-object-group"></i>
-              <select id="category">
-              </select>
-            </div>
+      <div class="main-container">
+        <div class="left-side">
+          <div class="dashboard top-dashboard">
+            <h3>Just the Top Headlines, plz</h3>
+            <span>Select from at least one of the options to get the relevent news. You can't mix news source with category or country
+            </span>
+            <div class="keyword-headlines">
+                <label for="keyword-hlinput">Get news by keyword</label>
+                <input class="keyword-hlinput"
+                placeholder="Enter something"
+                type=text
+                />
 
-            <div class="source-everything">
-              <h2>Pick your news-source</h2>
+            </div>
+            <div class="category-headlines">
+
+                <label for="category-headlines">Search by category</label>
+                <select class="category-headlines" id="category">
+                </select>
+            </div>
+            <div class="source-headlines">
+                <label for="source">Pick your news-source</label>
                 <select id="source">
                 </select>
             </div>
-            <div class="source-country">
-              <h2>Get news from a specific country</h2>
+            <div class="country-headlines">
+              <label for="country">Get news from a specific country</label>
               <select id="country">
               </select>
             </div>
+            <div class="page-headlines">
+              <label for="page-hlinput">How many stories do you want back? </label>
+              <input type="text"
+              name=""
+              placeholder="Default is 20"
+              class="page-hlinput">
+            </div>
+            <button class="button-hl">Submit</button>
+          </div>
+          <div class="dashboard bottom-dashboard">
+            <h3>Give me everything</h3>
+            <div class="keyword-everything">
+                <label for="keyword-evinput">Get news by keyword</label>
+                <input class="keyword-evinput"
+                placeholder="Enter something"
+                type=text
+                />
+            </div>
+            <div class="source-everything">
+              <label for="source1">Pick your news-source</label>
+              <select id="source1">
+              </select>
 
+            </div>
+            <div class="language-everything">
+              <label for="language">Pick your language</label>
+              <select id="language">
+              </select>
+            </div>
+            <div class="sortby-everything">
+              <label for="sortby">Sort results by</label>
+              <select id="sortby">
+              </select>
+            </div>
+            <div class="page-everything">
+              <label for="page-evinput">How many stories do you want back? </label>
+              <input type="text"
+              name=""
+              placeholder="Default is 20"
+              class="page-evinput">
+            </div>
+              <button class="button-ev">Submit</button>
           </div>
 
+
+
         </div>
+        <div class="right-side">
 
+
+        </div>
       </div>
-
+ -->
 
     </div>
 

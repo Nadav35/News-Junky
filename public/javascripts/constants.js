@@ -31,7 +31,7 @@ export const SOURCES = {
   'mtv-news': 'MTV News',
   'national-geographic': 'National Geographic',
   'national-review': 'National Review',
-  'nbc-news': 'Nbc News',
+  'nbc-news': 'NBC News',
   'new-scientist': 'New Scientist',
   'newsweek': 'Newsweek',
   'new-york-magazine': 'New York Magazine',
@@ -132,4 +132,35 @@ export const COUNTRIES = {
   'us': 'United States of America',
   've': 'Venezuela',
   'za': 'South Africa',
+};
+
+export const LANGUAGES = {
+  '': '-- select an option --',
+  'ar': 'Arabic',
+  'de': 'German',
+  'en': 'English',
+  'es': 'Spanish',
+  'fr': 'French',
+  'he': 'Hebrew',
+  'it': 'Italian',
+  'nl': 'Dutch',
+  'no': 'Norwegian',
+  'pt': 'Portuguese',
+  'ru': 'Russian',
+  'se': 'Northern Sami',
+  'ud': 'Urdu',
+  'zh': 'Chinese',
+};
+
+export const SORT_BY = {
+  '': '-- select an option --',
+  'publishedAt': 'Published At',
+  'relevancy': 'Relevancy',
+  'popularity': 'Popularity'
+};
+
+export const NEWS_TYPE = {
+  '': '-- select an option --',
+  'headlines': 'Just the headlines',
+  'everything': 'Give me everything'
 };

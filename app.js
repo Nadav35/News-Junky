@@ -18,6 +18,12 @@ app.get('/:type/:q', (req, response) => {
     console.log("no json" + body);
     response.send(body);
   });
+
+
+});
+
+app.get('/everything', (req, res) => {
+  debugger
 });
 
 app.listen(3000);
