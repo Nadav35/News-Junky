@@ -17,13 +17,22 @@ export default class Main{
 
   setupPage() {
     this.$el.append("<header class='header'>");
+    $(".header").append("<img class='img-header' src='/assets/demand.jpg'>");
     $(".header").append("<h1>Welcome to NewsJunky");
     $(".header").append("<h2>All the news you can handle, personalized just for you!!");
 
     this.$el.append("<div class='main-container'>");
+    this.$el.append("<footer class='footer'>");
+    $(".footer").append("<h3>LinkedIn");
+    $(".footer").append("<a href='https://www.linkedin.com/in/nadav-noy'><i class='fab fa-linkedin'></a>");
+    $(".footer").append("<h3>GitHub");
+    $(".footer").append("<a href='https://github.com/Nadav35'><i class='fab fa-github-square'></a>");
+
+
 
     $(".main-container").append("<div class='left-side'>");
     $(".main-container").append("<div class ='right-side'>");
+    $(".right-side").append("<img class='news-img' src='/assets/news_img.jpg'>");
     $(".left-side").append("<div class='dashboard'>");
     $(".dashboard").append("<div class='news-selector'>");
 
@@ -42,17 +51,11 @@ export default class Main{
     $(".dashboard").append("<div class='keyword'>");
     $(".keyword").append("<h3>Search by keyword");
     $(".keyword").append("<input id='keyword' type='text'>");
-    // $("#keyword").button({
-    //
-    // });
     $(".keyword").hide();
 
     $(".dashboard").append("<div class='page'>");
     $(".page").append("<h3>How many articles?");
     $(".page").append("<input id='page' type='text'>");
-    // $("#page").button({
-    //
-    // });
     $(".page").hide();
 
     $(".dashboard").append("<div class='source'>");
@@ -150,8 +153,8 @@ export default class Main{
       } else if (ui.item.label === "Give me everything") {
         $(".sortby").show();
         $(".source").show();
-        // $(".country").show();
-        // $(".category").show();
+        $(".country").hide();
+        $(".category").hide();
         $(".keyword").show();
         $(".page").show();
         $(".language").show();
@@ -161,7 +164,6 @@ export default class Main{
 
     $("#source").on("selectmenuchange", (event, ui) => {
 
-      //
       if ($("#news-type").val() === "headlines" || $("#news-type").val() === "everything") {
         $("#country").val("");
         $("#category").val("");
@@ -210,19 +212,23 @@ export default class Main{
           this.parseInfo(rightSide, response.articles);
         });
       } else if (newsType === "everything") {
-        newsapi.v2.everything({
-          q: keyword,
-          sources: source,
-          language: language,
-          sortBy: sortBy,
-          pageSize: pageSize
+          if (keyword === "" && source === null) {
+            alert("You must input a keyword or select a source");
+          } else {
+              newsapi.v2.everything({
+                q: keyword,
+                sources: source,
+                language: language,
+                sortBy: sortBy,
+                pageSize: pageSize
 
-        }).then( response => {
+              }).then( response => {
 
-          const rightSide = $('.right-side');
-          this.parseInfo(rightSide, response.articles);
-        });
-      }
+                const rightSide = $('.right-side');
+                this.parseInfo(rightSide, response.articles);
+              });
+            }
+          }
 
     });
 
@@ -231,63 +237,35 @@ export default class Main{
   parseInfo($el, articles) {
     $el.empty();
     const $ul = $("<ul>");
-    //
-
-    // create articles
     for (let i = 0; i < articles.length; i++) {
       const title = articles[i].title;
       const desc= articles[i].description;
       const source = articles[i].source.name;
-      console.log(source);
       const imgUrl = articles[i].urlToImage || '/assets/tenor.gif';
 
       const url = articles[i].url;
-      // console.log(url);
       const $sourceDiv = $("<div class='source-div'>");
-      // const $subSourceDiv = $("<div class='sub-source-div'>");
 
 
-      const $source = $(`<a href=${source}>`).text(source);
-      const $title = $("<span class='title'>").text(title);
+      const $source = $("<h1>").text(source);
+      const $title = $(`<a class='title' href=${url}>`).text(title);
 
-      const $desc = $("<p class='desc'>").text(desc);
+
+      const $desc = $(`<a class='desc' href=${url}>`).text(desc);
       const $imgUrl = $(`<img class='main-pic' src=${imgUrl} alt="image">`);
-      const $url = $(`<a href=${url}>`).text(`Go To Article`);
-
-      // $sourceDiv.html("<img src='/assets/fake_news.jpg'>");
       const $img = $("<img class='fake-news' src='/assets/fake_news.jpg'>");
       const $newsType = this.getNewsType(source);
-      // $subSourceDiv.append($img);
-      // $subSourceDiv.append($newsType);
-
-      // $sourceDiv.append($subSourceDiv);
-
-
 
       $sourceDiv.append($img);
       $sourceDiv.append($newsType);
-
-
-
-      // let $title = $("<span id='title'>");
-      // $("#title").text(`yo${i}`);
-
-      // console.log();
-
 
       let $li = $("<li>");
       $li.append($source);
       $li.append($title);
       $li.append($desc);
-
-
       $li.append($imgUrl);
-      $li.append($url);
       $li.append($sourceDiv);
-
-      // $li.append($title);
       $ul.append($li);
-
     }
     $el.append($ul);
   }
