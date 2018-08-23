@@ -37,7 +37,7 @@ $("p:has(i)").before("<p id='before_p'>A new paragraph before</p>");
 $("p:has(i)").after("<p id='after_p'>A new paragraph after</p>");
 
 $("#after_p").on("click", (e) => {
-  // debugger
+  //
   // let $this = $(e.currentTarget);
   $(e.currentTarget).remove();
 });
@@ -58,7 +58,7 @@ $("#before_p").on("click", (e) => {
 $("#oListIndent li").each((idx, el) => {
   let inp = $("#listStuff").val();
   // let $this = $(event.currentTarget);
-  // debugger
+  //
   // console.log($(this).text());
   // let $el1 = $(el);
   $("#listStuff").val(inp + ", " + $(el).text());

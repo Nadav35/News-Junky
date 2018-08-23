@@ -23,7 +23,7 @@ app.get('/:type/:q', (req, response) => {
 });
 
 app.get('/everything', (req, res) => {
-  debugger
+  
 });
 
 app.listen(3000);

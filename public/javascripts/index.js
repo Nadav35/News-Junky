@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // });
   //
   // $(".button-hl").on("click", (e) => {
-  //   // debugger
+  //   //
   //   // console.log(e);
   //   const keyword = $('.keyword-hlinput').val();
   //   const source = $('#source').val() === "" ?
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
   //     null : $('#country').val();
   //   const numResults = isNaN(parseInt($('.page-hlinput').val())) ?
   //     20 : parseInt($('.page-hlinput').val());
-  //   // debugger
+  //   //
   //   // axios.get(`/everything/?keyword=${keyword}&
   //   //   source=${source}`)
   //   //   .then(response => {
@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // });
   //
   // $(".button-ev").on("click", (e) => {
-  //   // debugger
+  //   //
   //   // console.log(e);
   //   const keyword = $('.keyword-evinput').val() || "the-new-york-times";
   //   const source = $('#source1').val();
@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
   //
   //
   //   const numResults = parseInt($('.page-evinput').val());
-  //   // debugger
+  //   //
   //   // axios.get(`/everything/?keyword=${keyword}&
   //   //   source=${source}`)
   //   //   .then(response => {

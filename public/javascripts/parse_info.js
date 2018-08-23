@@ -1,9 +1,9 @@
 
 export const parseInfo = ($el, articles) => {
-  // debugger
+  //
   $el.empty();
   const $ul = $("<ul>");
-  // debugger
+  //
 
   // create articles
   for (let i = 0; i < articles.length; i++) {

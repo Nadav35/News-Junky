@@ -54,6 +54,8 @@ body {
   grid-template-columns: 1fr 3fr;
 }
 
+
+
 .left-side{
   /* background: red; */
   /* height: 500px; */
@@ -65,15 +67,21 @@ body {
 
 .left-side .dashboard{
   display: grid;
-  grid-gap: 20px;
+  grid-gap: 10px;
   text-align: center;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid lightgrey;
 }
 
-.left-side div{
-  padding: 15px;
+.dashboard div{
+  padding: 5px;
   /* border: 1px solid grey; */
   /* line-height: 1.4px; */
   font-family: serif;
+  /* background: var(--lightorange); */
+  /* border-bottom: 1px solid lightgrey; */
+
 
 }
 
@@ -85,20 +93,33 @@ img{
   width: 100%;
   display: block;
   padding: 10px;
-  text-shadow: 2px 2px 2px rgba(28,110,164,0);
+  /* text-shadow: 2px 2px 2px rgba(28,110,164,0); */
 }
 
 a {
   text-decoration: none;
   font-family: serif;
-  font-size: 18px;
+  font-size: 24px;
+  color: var(--dark);
 
+}
+
+.desc {
+  overflow: scroll;
+}
+
+.main-pic:hover {
+  box-shadow: 3px 3px 5px 6px #ccc;
+}
+
+a:hover{
+  color: var(--lighterblue)
 }
 
 .right-side ul{
   list-style: none;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 35vw 35vw;
   width: 90%;
   grid-gap: 10px;
 }
@@ -109,17 +130,55 @@ a {
   padding: 30px;
   text-align: center;
   /* background: green; */
-  border: 1px solid pink;
+  border: 1px solid var(--lighterblue);
+  opacity: 0;
+  animation-name: article;
+  animation-duration: 3s;
+  /* animation-delay: 3s; */
+  animation-fill-mode: forwards;
+
+  transition-property: transform;
+  transition-duration: 1s;
+}
+
+input[type=text] {
+  border: 1px solid var(--darkerorange);
+  padding: 6px 10px;
+  width: 200px;
+}
+
+input[type=text]:hover {
+  box-shadow: var(--shadow);
+}
+
+li:hover {
+  box-shadow: var(--shadow);
+}
+
+@keyframes article {
+  0% {opacity:0}
+  100% {opacity:1}
 }
 
 #keyword, #page {
   background: white;
   width: 150px;
+  cursor: default;
+}
+
+.button{
+  padding: 4px 6px;
 }
 
 #button{
-  background: var(--darkerorange);
+  background: var(--red);
+  width: 200px;
+
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
 }
+
 
 .source-div {
   display: flex;
@@ -161,6 +220,10 @@ a {
   font-family: var(--lora);
 }
 
+.fake-news:hover {
+  transform: rotateY(180deg);
+}
+
 @media (max-width: 800px) {
   .right-side ul{
     list-style: none;
@@ -170,13 +233,3 @@ a {
     grid-gap: 10px;
   }
 }
-
-
-
-
-
-
-
-/* .highlight{
-  background: yellow;
-} */
