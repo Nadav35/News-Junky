@@ -17,7 +17,7 @@ export default class Main{
 
   setupPage() {
     this.$el.append("<header class='header'>");
-    $(".header").append("<img class='img-header' src='/assets/demand.jpg'>");
+    $(".header").append("<img class='img-header' src='./assets/demand.jpg'>");
     $(".header").append("<h1>Welcome to NewsJunky");
     $(".header").append("<h2>All the news you can handle, personalized just for you!!");
 
@@ -32,7 +32,7 @@ export default class Main{
 
     $(".main-container").append("<div class='left-side'>");
     $(".main-container").append("<div class ='right-side'>");
-    $(".right-side").append("<img class='news-img' src='/assets/news_img.jpg'>");
+    $(".right-side").append("<img class='news-img' src='./assets/news_img.jpg'>");
     $(".left-side").append("<div class='dashboard'>");
     $(".dashboard").append("<div class='news-selector'>");
 
@@ -241,7 +241,7 @@ export default class Main{
       const title = articles[i].title;
       const desc= articles[i].description;
       const source = articles[i].source.name;
-      const imgUrl = articles[i].urlToImage || '/assets/tenor.gif';
+      const imgUrl = articles[i].urlToImage || './assets/tenor.gif';
 
       const url = articles[i].url;
       const $sourceDiv = $("<div class='source-div'>");
@@ -253,7 +253,7 @@ export default class Main{
 
       const $desc = $(`<a class='desc' href=${url}>`).text(desc);
       const $imgUrl = $(`<img class='main-pic' src=${imgUrl} alt="image">`);
-      const $img = $("<img class='fake-news' src='/assets/fake_news.jpg'>");
+      const $img = $("<img class='fake-news' src='./assets/fake_news.jpg'>");
       const $newsType = this.getNewsType(source);
 
       $sourceDiv.append($img);
