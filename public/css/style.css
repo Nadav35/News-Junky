@@ -25,9 +25,9 @@ html {
 
 body {
   /* background: #ccc; */
-  /* margin: 30px 50px; */
-  /* line-height: 1.4; */
-  /* text-align: center; */
+  /* margin: 30px 50px;
+  line-height: 1.4;
+  text-align: center; */
 
 }
 
@@ -218,9 +218,6 @@ li h1{
   background: var(--lightorange);
   width: 200px;
 
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
 }
 
 
@@ -234,10 +231,6 @@ li h1{
 
 }
 
-/* .sub-source-div {
-  display: flex;
-  align-items: center;
-} */
 
 .source-div img{
   max-width: 200px;
