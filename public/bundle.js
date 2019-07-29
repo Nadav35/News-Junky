@@ -2565,6 +2565,7 @@ const newsapi = new NewsAPI('b68bcdc433a443eda7f73bf074ca5dfc');
 
 
 document.addEventListener('DOMContentLoaded', () => {
+  
   const root = $('.wrapper');
   new _main__WEBPACK_IMPORTED_MODULE_1__["default"](root);
 });
@@ -2587,7 +2588,7 @@ __webpack_require__.r(__webpack_exports__);
 const NewsAPI = __webpack_require__(/*! newsapi */ "./node_modules/newsapi/index.js");
 const newsapi = new NewsAPI('b68bcdc433a443eda7f73bf074ca5dfc');
 
-class Main{
+class Main {
   constructor($el) {
     this.$el = $el;
 
@@ -2787,68 +2788,74 @@ class Main{
           country: country,
           language: language,
           pageSize: pageSize
-        }).then( response => {
+        }).then(response => {
           //
           const rightSide = $('.right-side');
           this.parseInfo(rightSide, response.articles);
         });
       } else if (newsType === "everything") {
-          if (keyword === "" && source === null) {
-            alert("You must input a keyword or select a source");
-          } else {
-              newsapi.v2.everything({
-                q: keyword,
-                sources: source,
-                language: language,
-                sortBy: sortBy,
-                pageSize: pageSize
+        if (keyword === "" && source === null) {
+          alert("You must input a keyword or select a source");
+        } else {
+          newsapi.v2.everything({
+            q: keyword,
+            sources: source,
+            language: language,
+            sortBy: sortBy,
+            pageSize: pageSize
 
-              }).then( response => {
+          }).then(response => {
 
-                const rightSide = $('.right-side');
-                this.parseInfo(rightSide, response.articles);
-              });
-            }
-          }
+            const rightSide = $('.right-side');
+            this.parseInfo(rightSide, response.articles);
+          });
+        }
+      }
 
     });
 
   }
 
   parseInfo($el, articles) {
+    // debugger
     $el.empty();
-    const $ul = $("<ul>");
-    for (let i = 0; i < articles.length; i++) {
-      const title = articles[i].title;
-      const desc= articles[i].description;
-      const source = articles[i].source.name;
-      const imgUrl = articles[i].urlToImage || './public/assets/tenor.gif';
+    if (articles.length > 0) {
 
-      const url = articles[i].url;
-      const $sourceDiv = $("<div class='source-div'>");
+      const $ul = $("<ul>");
+      for (let i = 0; i < articles.length; i++) {
+        const title = articles[i].title;
+        const desc = articles[i].description;
+        const source = articles[i].source.name;
+        const imgUrl = articles[i].urlToImage || './public/assets/tenor.gif';
 
-
-      const $source = $("<h1>").text(source);
-      const $title = $(`<a class='title' href=${url}>`).text(title);
+        const url = articles[i].url;
+        const $sourceDiv = $("<div class='source-div'>");
 
 
-      const $desc = $(`<a class='desc' href=${url}>`).text(desc);
-      const $imgUrl = $(`<img class='main-pic' src=${imgUrl} alt="image">`);
-      const $img = $("<img class='fake-news' src='./public/assets/fake_news.jpg'>");
-      const $newsType = this.getNewsType(source);
+        const $source = $("<h1>").text(source);
+        const $title = $(`<a class='title' href=${url}>`).text(title);
 
-      $sourceDiv.append($img);
-      $sourceDiv.append($newsType);
 
-      let $li = $("<li>");
-      $li.append($source);
-      $li.append($title);
-      $li.append($desc);
-      $li.append($imgUrl);
-      $li.append($sourceDiv);
-      $ul.append($li);
+        const $desc = $(`<a class='desc' href=${url}>`).text(desc);
+        const $imgUrl = $(`<img class='main-pic' src=${imgUrl} alt="image">`);
+        const $img = $("<img class='fake-news' src='./public/assets/fake_news.jpg'>");
+        const $newsType = this.getNewsType(source);
+
+        $sourceDiv.append($img);
+        $sourceDiv.append($newsType);
+
+        let $li = $("<li>");
+        $li.append($source);
+        $li.append($title);
+        $li.append($desc);
+        $li.append($imgUrl);
+        $li.append($sourceDiv);
+        $ul.append($li);
+      }
+      $el.append($ul);
+    } else {
+      $el.append("<img class='news-img' src='https://media.giphy.com/media/zLCiUWVfex7ji/giphy.gif'>");
     }
-    $el.append($ul);
   }
 
   getNewsType(source) {
@@ -2866,7 +2873,6 @@ class Main{
     return $span;
   }
 }
-
 
 /***/ })
 
