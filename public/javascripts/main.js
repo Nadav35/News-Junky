@@ -26,9 +26,11 @@ export default class Main {
     this.$el.append("<div class='main-container'>");
     this.$el.append("<footer class='footer'>");
     $(".footer").append("<h3>LinkedIn");
-    $(".footer").append("<a href='https://www.linkedin.com/in/nadav-noy'><i class='fab fa-linkedin'></a>");
+    $(".footer").append("<a href='https://www.linkedin.com/in/nadav-noy' target='_blank'><i class='fab fa-linkedin'></a>");
     $(".footer").append("<h3>GitHub");
-    $(".footer").append("<a href='https://github.com/Nadav35'><i class='fab fa-github-square'></a>");
+    $(".footer").append("<a href='https://github.com/Nadav35' target='_blank'><i class='fab fa-github-square'></a>");
+    $(".footer").append("<h3>Portfolio");
+    $(".footer").append("<a href='https://nadav35.github.io/' target='_blank'><i class='fas fa-briefcase'></a>");
 
 
 
@@ -250,27 +252,29 @@ export default class Main {
         const imgUrl = articles[i].urlToImage || './public/assets/tenor.gif';
 
         const url = articles[i].url;
-        const $sourceDiv = $("<div class='source-div'>");
+        // const $sourceDiv = $("<div class='source-div'>");
 
+        const $imgUrl = $(`<img class='main-pic' src=${imgUrl} alt="image">`);
 
-        const $source = $("<h1>").text(source);
         const $title = $(`<a class='title' href=${url}>`).text(title);
+        const $source = $("<h1>").text(source);
 
 
         const $desc = $(`<a class='desc' href=${url}>`).text(desc);
-        const $imgUrl = $(`<img class='main-pic' src=${imgUrl} alt="image">`);
-        const $img = $("<img class='fake-news' src='./public/assets/fake_news.jpg'>");
-        const $newsType = this.getNewsType(source);
 
-        $sourceDiv.append($img);
-        $sourceDiv.append($newsType);
+        // const $img = $("<img class='fake-news' src='./public/assets/fake_news.jpg'>");
+        // const $newsType = this.getNewsType(source);
 
-        let $li = $("<li>");
+        // $sourceDiv.append($img);
+        // $sourceDiv.append($newsType);
+
+        let $li = $(`<li href=${url}>`);
+        $li.append($imgUrl);
         $li.append($source);
         $li.append($title);
         $li.append($desc);
-        $li.append($imgUrl);
-        $li.append($sourceDiv);
+
+        // $li.append($sourceDiv);
         $ul.append($li);
       }
       $el.append($ul);
