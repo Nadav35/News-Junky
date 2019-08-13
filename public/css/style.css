@@ -228,7 +228,9 @@ li:hover {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
   /* display: grid;
   grid-gap: 10px;
   text-align: center;
@@ -290,7 +292,9 @@ li h1 {
   grid-column: 2/6;
   grid-row: 3/4;
   color: #ccc;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 10px;
   /* text-align: left; */
   /* font-family: var(--lora);
   font-size: 20px;
