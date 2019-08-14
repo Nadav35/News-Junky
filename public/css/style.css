@@ -17,25 +17,20 @@
 
 }
 
-html {
+/* html {
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
   color: var(--dark);
-}
+} */
 
-body {
-  /* background: #ccc; */
-  /* margin: 30px 50px;
-  line-height: 1.4;
-  text-align: center; */
-
-}
 
 .ui-selectmenu-text {
   font-size: 12px;
 }
 
-
+body {
+  margin: 0;
+}
 
 .wrapper {
   display: grid;
@@ -324,23 +319,26 @@ li h1 {
   display: flex;
   justify-content: flex-end;
   text-align: center;
-  align-items: baseline;
+  /* align-items: baseline; */
   background: var(--dark);
   margin-top: 20px;
+  color: white;
+  font-size: 20px;
+  padding: 5px;
+  height: 70px;
+  align-items: center;
+
 }
 
 .footer * {
-  /* margin-left: px; */
-  margin-right: 10px;
-  margin-bottom: 5px;
-  ;
-  color: white;
-  font-size: 20px;
+  /* margin-right: 10px; */
+  /* margin-bottom: 5px; */
   padding: 5px;
 }
 
 .footer i {
   font-size: 30px;
+  color: white;
 }
 
 .footer i:hover {
