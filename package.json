@@ -20,7 +20,7 @@
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
     "express": "^4.16.3",
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "newsapi": "^2.3.0",
     "node-fetch": "^2.2.0",
     "node-sass": "^4.9.3",
